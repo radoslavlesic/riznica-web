@@ -3,11 +3,11 @@ Ext.define("riznica.samplemodule.blog.store.PostStore", {
 
     alias: "store.samplemodule-blog-store-PostStore",
     model: 'riznica.samplemodule.blog.model.Post',
-
+    storeId: 'post',
     fields: ["id", "title", "content"],
     autoLoad: true,
     autoSync: true,
-
+    // remoteFilter: false,
     proxy: {
         type: "ajax",
         api: {
@@ -25,7 +25,7 @@ Ext.define("riznica.samplemodule.blog.store.PostStore", {
             writeAllFields: false,
             rootProperty: 'data'
         },
-        actionMethods: { create: "POST", read: "POST", update: "POST", destroy: "POST" },
+        actionMethods: { create: "POST", read: "GET", update: "POST", destroy: "POST" },
         paramsAsJson: true,
         simpleSortMode: true,
         sortParam: "sortBy",

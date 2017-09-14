@@ -15,7 +15,6 @@ Ext.define("riznica.samplemodule.personnel.view.CategoryListView", {
     title: "Category registry",
 
     frame: true,
-
     store: {
         type: "samplemodule-blog-store-CategoryStore"
     },

@@ -7,7 +7,8 @@ Ext.define("riznica.samplemodule.view.BlogModuleView", {
         "Ext.plugin.Responsive",
         "riznica.samplemodule.view.PostModuleView",
         "riznica.samplemodule.personnel.view.CategoryListView",
-        "riznica.samplemodule.view.BlogViewController"
+        "riznica.samplemodule.view.BlogViewController",
+        "riznica.samplemodule.blog.store.PostStore"
     ],
 
     itemId: 'blogModuleView',
@@ -76,6 +77,7 @@ Ext.define("riznica.samplemodule.view.BlogModuleView", {
             items: [
                 {
                     xtype: 'panel',
+                    itemId: 'searchCatPanel',
                     title: 'Search and Categories',
                     style: {'border':'1px solid #5FA2DD'},
                     layout: {
@@ -172,42 +174,127 @@ Ext.define("riznica.samplemodule.view.BlogModuleView", {
                         // },
                         {
                             xtype: 'fieldcontainer',
+                            itemId: 'filterContainer',
+                            labelStyle: 'width:40px',
+                            // style: {'border':'1px solid #5FA2DD'},
                             fieldLabel: 'Filter',
-                            margin: '5',
+                            margin: '5 5 5 5',
+                            padding: '5 5 5 5',
                             defaultType: 'radiofield',
-                            // defaults: {
-                            //     flex: 1
-                            // },
-                            layout: 'hbox',
+                            // width: 150,
+                            defaults: {
+                                flex: 0.5
+                            },
+                            layout: 'vbox',
                             items:[
                                 {
-                                    xtype: 'radio',
-                                    boxLabel: 'Autor',
-                                    // margin: '5 5 5 5',
+                                    boxLabel  : 'Autor',
+                                    // labelStyle: 'width: 30px',
+                                    inputValue: 'Autor',
+                                    margin: '0',
                                     id: 'rb1',
                                     name: 'rbGroup',
                                     checked: false,
-                                    hideLabel: true
+                                    listeners: {
+                                        change: function () {
+                                            var rb1 = Ext.getCmp('rb1');
+                                            if(rb1.getValue()) {
+                                                Ext.ComponentQuery.query('#gridCategory')[0].hide();
+                                                Ext.ComponentQuery.query('#searchContainer')[0].show();
+                                                Ext.ComponentQuery.query('#searchCatPanel')[0].remove('datePanel', true);
+                                            }
+                                        }
+                                    }
                                 },{
-                                    xtype: 'radio',
                                     boxLabel: 'Naslov',
-                                    margin: '0 5 0 5',
+                                    inputValue: 'Naslov',
+                                    margin: '0',
                                     id: 'rb2',
                                     name: 'rbGroup',
-                                    checked: false,
-                                    hideLabel: false
+                                    checked: true,
+                                    listeners: {
+                                        change: function () {
+                                            var rb2 = Ext.getCmp('rb2');
+                                            if(rb2.getValue()) {
+                                                Ext.ComponentQuery.query('#gridCategory')[0].hide();
+                                                Ext.ComponentQuery.query('#searchContainer')[0].show();
+                                                Ext.ComponentQuery.query('#searchCatPanel')[0].remove('datePanel', true);
+                                            }
+                                        }
+                                    }
                                 },{
-                                    xtype: 'radio',
                                     boxLabel: 'Kategorija',
-                                    // margin: '5 5 5 5',
+                                    inputValue: 'Kategorija',
+                                    margin: '0',
+                                    id: 'rb3',
+                                    name: 'rbGroup',
+                                    checked: false,
+                                    listeners: {
+                                        change: function () {
+                                            var rb3 = Ext.getCmp('rb3');
+                                            if(rb3.getValue()) {
+                                                Ext.ComponentQuery.query('#gridCategory')[0].show();
+                                                Ext.ComponentQuery.query('#searchContainer')[0].hide();
+                                                Ext.ComponentQuery.query('#searchCatPanel')[0].remove('datePanel', true);
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    boxLabel: 'Datum',
+                                    inputValue: 'Datum',
+                                    margin: '0',
                                     id: 'rb4',
                                     name: 'rbGroup',
                                     checked: false,
-                                    hideLabel: false
+                                    listeners: {
+                                        change: function () {
+                                            var rb4 = Ext.getCmp('rb4');
+                                            if(rb4.getValue()) {
+                                                Ext.ComponentQuery.query('#gridCategory')[0].hide();
+                                                Ext.ComponentQuery.query('#searchContainer')[0].hide();
+                                                Ext.ComponentQuery.query('#searchCatPanel')[0].add(
+                                                    {
+                                                        xtype: 'panel',
+                                                        itemId:'datePanel',
+                                                        // width: 150,
+                                                        margin: '5 5 5 5',
+                                                        layout:{
+                                                            type: 'vbox',
+                                                            pack: 'start',
+                                                            align: 'stretch'
+                                                        },
+                                                        // flex: 0.5,
+                                                        items:[
+                                                            {
+                                                                xtype: 'datefield',
+                                                                fieldLabel: 'Od',
+                                                                labelStyle: 'width:40px',
+                                                                // anchor: '100%',
+                                                                name: 'from_date',
+                                                                value: new Date() // limited to the current date or prior
+                                                            }, {
+                                                                xtype: 'datefield',
+                                                                fieldLabel: 'Do',
+                                                                labelStyle: 'width:40px',
+                                                                // anchor: '100%',
+                                                                name: 'to_date',
+                                                                value: new Date()  // defaults to today
+                                                            },{
+                                                                xtype: 'button',
+                                                                text: 'Search',
+                                                                iconCls: 'x-fa fa-search'
+                                                            }]
+                                                    }
+                                                );
+                                            }
+                                        }
+                                    }
                                 }
                             ]
                         },{
                             xtype: 'fieldcontainer',
+                            itemId: 'searchContainer',
                             layout: {
                                 type: 'hbox',
                                 pack: 'start',
@@ -222,23 +309,40 @@ Ext.define("riznica.samplemodule.view.BlogModuleView", {
                                     flex: 1,
                                     // width: 300,
                                     hideTrigger: true,
-                                    displayField: 'name',
+                                    displayField: 'title',
                                     // pageSize: 2,
                                     minChars: 3,
                                     // queryDelay: 250,
                                     store: {
-                                        type: "samplemodule-blog-store-CategoryStore"
+                                        type: "samplemodule-blog-store-PostStore"
                                     },
-                                    // queryParam: 'name',
+                                    queryParam: 'title',
                                     typeAhead: true,
-                                    // mode: 'remote',
-                                    // forceSelection: true,
+                                    mode: 'remote',
+                                    forceSelection: true,
                                     // typeAheadDelay: 200,1
                                     itemId: 'filter',
-                                    valueField: 'name',
+                                    valueField: 'title',
+                                    enableKeyEvents: true,
                                     listeners: {
+                                        beforequery:function(queryEvent){
+                                            Ext.Ajax.abortAll(); //cancel any previous requests
+                                            return true;
+                                        },
+                                        // keypress: function (field, event) {
+                                        //     if(event.getKey()==event.ENTER){
+                                        //         Ext.ComponentQuery.query('#filter')[0].getStore().load({
+                                        //             params: {title: 'post'}
+                                        //         });
+                                        //         console.log('nesto: '+field.value);
+                                        //     }
+                                        // },
                                         select: function (combo,records, eOpts) {
 
+                                            // Ext.ComponentQuery.query('#filter')[0].getStore().load({
+                                            //     params: {title: records.data.name}
+                                            // });
+                                            // console.log('nesto: '+records.data.name);
                                         }
                                     }
                                 },{
@@ -252,6 +356,7 @@ Ext.define("riznica.samplemodule.view.BlogModuleView", {
                         },{
                             xtype: "samplemodule-personnel-view-CategoryListView",
                             title: 'Categories',
+                            hidden: true,
                             frame: false
                         }
                     ]
@@ -259,7 +364,6 @@ Ext.define("riznica.samplemodule.view.BlogModuleView", {
                     xtype: 'samplemodule-view-PostModuleView',
                     // title: 'Posts',
                     margin: '0 0 5 5',
-                    // itemId: 'postModule',
                     flex: 1.5,
                     style: {'border':'1px solid #5FA2DD'}
                 }

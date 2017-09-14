@@ -20,6 +20,10 @@ class PostController {
         validateCallAndRender(cmd, {postService.listByCatId(cmd)})
     }
 
+    def listByTitle(PostCommand cmd){
+        validateCallAndRender(cmd, {postService.listByTitle(cmd)})
+    }
+
     def findPost(PostCommand cmd){
         validateCallAndRender(cmd, {postService.findPost(cmd)})
     }

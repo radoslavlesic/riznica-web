@@ -26,6 +26,12 @@ class PostService {
         [success: true, data: result]
     }
 
+    def listByTitle(PostCommand cmd){
+        def result = Post.findAllByTitleLike("%"+'post'+"%")
+
+        [success: true, data: result]
+    }
+
     def findPost(PostCommand cmd){
 
         def result = Post.findAllByTitleLike("%"+cmd.title+"%")
