@@ -1,0 +1,8 @@
+.x-form-readonly {
+  input[type="text"],
+  textarea,
+  .x-form-text-wrap-default:not(.x-form-text-wrap-invalid) {
+    border-color: #d6dbe3;
+    background: none #e3e9ed;
+  }
+}

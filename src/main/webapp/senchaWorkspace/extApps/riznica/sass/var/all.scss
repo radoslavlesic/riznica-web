@@ -1,0 +1,16 @@
+/*
+ * This is is imported by virtue of "sass.var" in "app.json".
+ */
+
+$enable-font-awesome: dynamic(true);
+$body-background-color: dynamic(#F5F5F5);
+$border-layout-ct-background-color: dynamic($body-background-color);
+
+$loadmask-background-color: dynamic(#ccc);
+$loadmask-opacity: dynamic(0.5);
+$loadmask-page-background-color: dynamic($loadmask-background-color);
+$loadmask-page-opacity: dynamic($loadmask-opacity);
+
+$errorNormalTextColor: dynamic(red);
+$warningNormalTextColor: dynamic(darken($warning-icon-color, 25));
+$infoNormalTextColor: dynamic(darken($info-icon-color, 35));

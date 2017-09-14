@@ -1,0 +1,13 @@
+.about-view-content {
+  margin: 0 10px 0 10px;
+  td {
+    vertical-align: top;
+    padding: 5px 0 0 15px;
+
+    &.title {
+      font-weight: bold;
+      padding: 5px 0 0 0;
+      width: 150px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.grails.plugins:external-config:1.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails.plugins/external-config/1.0.0/323bab3a5d1704f147c967244701d97073b56f87/external-config-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails.plugins/external-config/1.0.0/80e6680acac55cff71fa98fbbd1de1c6b5cd05f1/external-config-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

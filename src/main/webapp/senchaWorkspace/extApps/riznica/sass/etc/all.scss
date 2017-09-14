@@ -1,0 +1,31 @@
+/*
+ * This is is imported by virtue of "sass.etc" in "app.json".
+ */
+
+// Required for IE 11 since it does not have font-weight set to bold for <b> elements.
+strong, b {
+  font-weight: bold;
+}
+
+.x-grid-cell-inner-action-col {
+  font-size: inherit !important;
+}
+
+.icon-action-column {
+  font-size: 18px;
+}
+
+.x-btn-icon-el-default-toolbar-small {
+  color: #15498b !important;
+  font-size: 14px !important;
+  height: 14px !important;
+  line-height: 14px !important;
+}
+
+.label-tooltip span {
+  cursor: help !important;
+}
+
+.title-tooltip .x-fieldset-header-text span {
+  cursor: help !important;
+}

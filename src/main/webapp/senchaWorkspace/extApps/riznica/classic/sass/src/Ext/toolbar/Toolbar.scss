@@ -1,0 +1,89 @@
+.with-bordered-button {
+  .x-btn-default-toolbar-small {
+    border-color: #99BCE8 !important;
+  }
+}
+
+
+// ----------------------------------------
+// custom-flat ui style for toolbar - start
+// ----------------------------------------
+.x-toolbar-custom-flat {
+  border-color: $toolbar-custom-flat-border-color;
+  background-image: $toolbar-custom-flat-background-image;
+  background-color: $toolbar-custom-flat-background-color;
+
+  &:not(.x-docked-noborder-bottom) {
+    border-top-width: 1px !important;
+  }
+
+  .x-btn-default-toolbar-small {
+    border-color: $button-toolbar-border-color-over;
+  }
+
+  .x-btn-default-toolbar-small-disabled {
+    border-color: $button-default-border-color;
+  }
+}
+
+// Some hacking to make toolbar-custom-flat working in IE8 and bellow
+.x-nbr {
+  .x-toolbar-custom-flat {
+    border-color: $toolbar-custom-flat-border-color;
+    background-image: $toolbar-custom-flat-background-image;
+    background-color: $toolbar-custom-flat-background-color;
+
+    .x-btn-default-toolbar-small {
+      .x-frame-tl, .x-frame-bl, .x-frame-tr, .x-frame-br, .x-frame-tc, .x-frame-bc {
+        background-image: url("extpl-core/images/theme/ext-theme-classic/btn/btn-default-toolbar-small-over-corners.gif");
+      }
+
+      .x-frame-ml,
+      .x-frame-mr {
+        background-image: url("extpl-core/images/theme/ext-theme-classic/btn/btn-default-toolbar-small-over-sides.gif");
+      }
+    }
+
+    .x-btn-default-toolbar-small-over {
+      .x-frame-tl, .x-frame-bl, .x-frame-tr, .x-frame-br, .x-frame-tc, .x-frame-bc {
+        background-image: url("images/btn/btn-default-toolbar-small-over-corners.gif");
+      }
+
+      .x-frame-ml,
+      .x-frame-mr {
+        background-image: url("images/btn/btn-default-toolbar-small-over-sides.gif");
+      }
+    }
+
+    .x-btn-default-toolbar-small-disabled {
+      .x-frame-tl, .x-frame-bl, .x-frame-tr, .x-frame-br, .x-frame-tc, .x-frame-bc {
+        background-image: url("extpl-core/images/theme/ext-theme-classic/btn/btn-default-toolbar-small-disabled-corners.gif");
+      }
+
+      .x-frame-ml,
+      .x-frame-mr {
+        background-image: url("extpl-core/images/theme/ext-theme-classic/btn/btn-default-toolbar-small-disabled-sides.gif");
+      }
+    }
+  }
+}
+
+.x-toolbar-custom-flat-not-docked {
+  @extend .x-toolbar-custom-flat;
+  border-top-width: 1px !important;
+  border-top-style: solid;
+  border-bottom-width: 1px !important;
+  border-bottom-style: solid;
+}
+// --------------------------------------
+// custom-flat ui style for toolbar - end
+// --------------------------------------
+
+// Use on toolbars when they should contain text which looks like a text in plain panel header (panel header without background gradient).
+// In general, it can be used on toolbars which should contain panel-like title, but also some small toolbar buttons.
+.extpl-toolbar-as-plain-header {
+  @extend .x-panel-header-text-container-default;
+
+  line-height: 14px;
+  padding: 0 5px 0 5px;
+}

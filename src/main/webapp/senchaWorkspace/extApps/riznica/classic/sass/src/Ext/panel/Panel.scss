@@ -1,0 +1,7 @@
+.border-splitter-white .x-border-layout-ct {
+  background-color: #ffffff;
+}
+
+.x-panel-default-framed {
+  @include border-radius(0);
+}

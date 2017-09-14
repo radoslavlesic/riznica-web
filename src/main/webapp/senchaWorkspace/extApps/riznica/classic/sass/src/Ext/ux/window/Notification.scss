@@ -1,0 +1,81 @@
+.ux-notification-window .x-window-body {
+  width: $ux-notification-window-window-body-width;
+  text-align: $ux-notification-window-window-body-text-align;
+
+  padding-top: $ux-notification-window-window-body-padding-top;
+  padding-right: $ux-notification-window-window-body-padding-right;
+  padding-bottom: $ux-notification-window-window-body-padding-bottom;
+  padding-left: $ux-notification-window-window-body-padding-left;
+}
+
+body .ux-notification-light {
+  background-color: $ux-notification-light-background-color;
+}
+
+.ux-notification-light .x-window-header {
+  background-color: $ux-notification-light-window-header-background-color;
+}
+
+.ux-notification-light .x-window-body {
+  width: $ux-notification-light-window-body-width;
+  background-color: $ux-notification-light-window-body-background-color;
+  text-align: $ux-notification-light-window-body-text-align;
+
+  padding-top: $ux-notification-light-window-body-padding-top;
+  padding-right: $ux-notification-light-window-body-padding-right;
+  padding-bottom: $ux-notification-light-window-body-padding-bottom;
+  padding-left: $ux-notification-light-window-body-padding-left;
+
+  border-width: $ux-notification-light-window-body-border-width;
+  border-style: $ux-notification-light-window-body-border-style;
+  border-color: $ux-notification-light-window-body-border-color;
+}
+
+.ux-notification-light li {
+  font-size: $ux-notification-light-li-font-size;
+  line-height: $ux-notification-light-li-line-height;
+  text-align: $ux-notification-light-li-text-align;
+
+  margin-top: $ux-notification-light-li-margin-top;
+  margin-right: $ux-notification-light-li-margin-right;
+  margin-bottom: $ux-notification-light-li-margin-bottom;
+  margin-left: $ux-notification-light-li-margin-left;
+
+  list-style-type: $ux-notification-light-li-list-style-type;
+  list-style-position: $ux-notification-light-li-list-style-position;
+  list-style-image: $ux-notification-light-li-list-style-image;
+}
+
+.ux-notification-light .info {
+  color: $ux-notification-light-info-color;
+  b {
+    color: $ux-notification-light-info-bold-color;
+  }
+}
+
+.ux-notification-light .warning {
+  color: $ux-notification-light-warning-color;
+  b {
+    color: $ux-notification-light-warning-bold-color;
+  }
+}
+
+.ux-notification-light .error {
+  color: $ux-notification-light-error-color;
+  b {
+    color: $ux-notification-light-error-bold-color;
+    font-weight: $ux-notification-light-error-bold-font-weight;
+  }
+}
+
+.ux-notification-icon-info {
+  @extend .#{$ux-notification-icon-info-extended-class};
+}
+
+.ux-notification-icon-warning {
+  @extend .#{$ux-notification-icon-warning-extended-class};
+}
+
+.ux-notification-icon-error {
+  @extend .#{$ux-notification-icon-error-extended-class};
+}

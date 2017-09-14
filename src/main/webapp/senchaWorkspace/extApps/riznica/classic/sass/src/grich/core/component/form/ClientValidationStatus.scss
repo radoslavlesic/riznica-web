@@ -1,0 +1,43 @@
+.clientValidationStatusInvalidIcon {
+  color: $client-validation-status-invalid-icon-color !important;
+}
+
+.clientValidationStatusValidIcon {
+  color: $client-validation-status-valid-icon-color !important;
+}
+
+.client-validation-status {
+  background: transparent none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: none;
+
+  & .x-btn-wrap {
+    outline: none !important;
+  }
+}
+
+.client-validation-status {
+  background: transparent none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  outline: none;
+  cursor: default;
+}
+
+.client-validation-status-valid {
+  @extend .client-validation-status;
+
+  .x-btn-inner {
+    color: $client-validation-status-valid-text-color !important;
+  }
+}
+
+.client-validation-status-invalid {
+  @extend .client-validation-status;
+  cursor: pointer;
+
+  .x-btn-inner {
+    color: $client-validation-status-invalid-text-color !important;
+  }
+}

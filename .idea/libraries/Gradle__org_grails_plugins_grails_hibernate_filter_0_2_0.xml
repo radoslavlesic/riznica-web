@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.grails.plugins:grails-hibernate-filter:0.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails.plugins/grails-hibernate-filter/0.2.0/867d28158fa217beba0a38abb1a36372793f6824/grails-hibernate-filter-0.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails.plugins/grails-hibernate-filter/0.2.0/9f84c98ce6e29d0654b7e2f252b73d6ada6b8d64/grails-hibernate-filter-0.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

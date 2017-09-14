@@ -1,0 +1,50 @@
+.rbvt-sidebar-panel {
+  padding: 3px;
+  border: none;
+
+  .x-grid-body {
+    border: none;
+  }
+
+  .x-grid-with-row-lines .x-grid-item-selected + .x-grid-item {
+    border: none;
+  }
+
+  .x-grid-with-row-lines .x-grid-item {
+    border: none;
+    margin: 0 0 3px 0;
+    width: 100% !important;
+
+    &.x-grid-item-selected {
+      border: none;
+    }
+
+    &.x-grid-item-over {
+      border: none;
+    }
+  }
+  .x-grid-item-alt {
+    background-color: transparent;
+  }
+
+  .x-grid-cell-inner {
+    font-size: 11px;
+    line-height: 20px;
+    padding: 0 0 0 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+
+  .x-grid-item-over .x-grid-cell-inner {
+    background-color: #efefef;
+    border: 1px solid #ddd;
+  }
+
+  .x-grid-item-selected .x-grid-cell-inner {
+    font-weight: bold;
+    color: #04408c;
+    background-color: #dfe8f6;
+    border: 1px dotted #a3bae9;
+  }
+
+}

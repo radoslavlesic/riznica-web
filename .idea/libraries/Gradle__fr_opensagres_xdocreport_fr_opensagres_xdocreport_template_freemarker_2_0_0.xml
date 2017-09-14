@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: fr.opensagres.xdocreport:fr.opensagres.xdocreport.template.freemarker:2.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/fr.opensagres.xdocreport/fr.opensagres.xdocreport.template.freemarker/2.0.0/35547b0120adb2cbf9109651faa8df4c5a9821f5/fr.opensagres.xdocreport.template.freemarker-2.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/fr.opensagres.xdocreport/fr.opensagres.xdocreport.template.freemarker/2.0.0/e8a82756d9f5bae64a1146020be979b859fb5ee9/fr.opensagres.xdocreport.template.freemarker-2.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

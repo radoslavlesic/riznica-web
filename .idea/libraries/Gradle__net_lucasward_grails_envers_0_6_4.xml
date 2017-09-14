@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.lucasward:grails-envers:0.6.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.lucasward/grails-envers/0.6.4/73edafb60dfa41da0d78ac2453cdb615423dcf0c/grails-envers-0.6.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.lucasward/grails-envers/0.6.4/455877f3fe2b0ac59be25f5a2d69398591f9275/grails-envers-0.6.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,29 @@
+$sidebar-panel-padding-top: 0 !default;
+$sidebar-panel-padding-right: 3px !default;
+$sidebar-panel-padding-bottom: 2px !default;
+$sidebar-panel-padding-left: 3px !default;
+
+$sidebar-panel-item-margin-top: 3px !default;
+$sidebar-panel-item-padding-left: 5px !default;
+$sidebar-panel-item-font-size: 11px !default;
+$sidebar-panel-item-line-height: 20px !default;
+$sidebar-panel-item-cursor: pointer !default;
+$sidebar-panel-item-border-width: 1px !default;
+$sidebar-panel-item-border-style: solid !default;
+$sidebar-panel-item-border-color: transparent !default;
+
+// by default $sidebar-panel-item-hover-background-color should be equal to $grid-row-cell-over-background-color from Ext.panel.Table
+$sidebar-panel-item-hover-background-color: #efefef !default;
+// by default $sidebar-panel-item-hover-border-color should be equal to $grid-row-cell-over-border-color from Ext.panel.Table
+$sidebar-panel-item-hover-border-color: #dddddd !default;
+
+$sidebar-panel-item-selected-font-weight: bold !default;
+// by default $sidebar-panel-item-selected-color should be equal to $panel-header-color from Ext.panel.Panel
+$sidebar-panel-item-selected-color: #04408c !default;
+// by default $sidebar-panel-item-selected-background-color should be equal to $grid-row-cell-selected-background-color from Ext.panel.Table
+$sidebar-panel-item-selected-background-color: #dfe8f6 !default;
+$sidebar-panel-item-selected-border-width: 1px !default;
+// by default $sidebar-panel-item-selected-border-color should be equal to $grid-row-cell-selected-border-color from Ext.panel.Table
+$sidebar-panel-item-selected-border-color: #a3bae9 !default;
+// by default $sidebar-panel-item-selected-border-style should be equal to $grid-row-cell-selected-border-style from Ext.panel.Table
+$sidebar-panel-item-selected-border-style: dotted !default;

@@ -1,0 +1,90 @@
+// Override grich-notification styles from 'grich-core' package
+.grich-notification {
+  border-color: #a2b1c5 !important;
+
+  .x-window-header {
+    background-color: inherit !important;;
+    border-color: inherit !important;;
+
+    .x-tool-img {
+      background-color: transparent !important;;
+    }
+
+    .x-title-text {
+      font-size: inherit !important;;
+      text-align: center;
+    }
+
+    .x-title-icon-default {
+      opacity: 1 !important;
+    }
+  }
+
+  .x-window-body {
+    background-color: $grich-notification-body-background-color;
+  }
+
+  // Note that top level class contains template name ('default' in this case). This will allow for different styling of different templates.
+  .notification-tpl-default-body {
+    &.info {
+      color: $infoNormalTextColor;
+    }
+
+    &.warning {
+      color: $warningNormalTextColor;
+    }
+
+    &.error {
+      color: $errorNormalTextColor;
+    }
+
+    .notification-body-headline {
+      text-align: center;
+      font-size: 13px !important;;
+    }
+
+    .notification-body-messages {
+      ul {
+        padding-left: 5px !important;;
+      }
+
+      ul > li {
+        font-size: 11px;
+        line-height: 13px;
+        text-align: left;
+        margin: 0 0 0 15px;
+        list-style: circle outside none;
+      }
+
+      ul > li > b {
+        color: #8b0000;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .notification-tpl-plain-body {
+    &.info {
+      color: $infoNormalTextColor;
+    }
+
+    &.warning {
+      color: $warningNormalTextColor;
+    }
+
+    &.error {
+      color: $errorNormalTextColor;
+    }
+
+    .notification-body-headline {
+      text-align: center;
+      font-size: 13px !important;;
+    }
+
+    .notification-body-messages {
+      p {
+        text-align: justify;
+      }
+    }
+  }
+}

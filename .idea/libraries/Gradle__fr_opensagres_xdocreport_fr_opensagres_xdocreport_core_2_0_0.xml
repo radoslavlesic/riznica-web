@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: fr.opensagres.xdocreport:fr.opensagres.xdocreport.core:2.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/fr.opensagres.xdocreport/fr.opensagres.xdocreport.core/2.0.0/7b664de72a247501ba02a3b7de46b7a14e8f7370/fr.opensagres.xdocreport.core-2.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/fr.opensagres.xdocreport/fr.opensagres.xdocreport.core/2.0.0/6fa647910ae345616a7e48d148271e19862aa003/fr.opensagres.xdocreport.core-2.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

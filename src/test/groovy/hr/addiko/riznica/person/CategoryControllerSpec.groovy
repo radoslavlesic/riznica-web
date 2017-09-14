@@ -1,0 +1,23 @@
+package hr.addiko.riznica.person
+
+import grails.test.mixin.TestFor
+import hr.addiko.riznica.blog.CategoryController
+import spock.lang.Specification
+
+/**
+ * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
+ */
+@TestFor(CategoryController)
+class CategoryControllerSpec extends Specification {
+
+    def setup() {
+    }
+
+    def cleanup() {
+    }
+
+    void "test something"() {
+        expect:"fix me"
+            true == false
+    }
+}

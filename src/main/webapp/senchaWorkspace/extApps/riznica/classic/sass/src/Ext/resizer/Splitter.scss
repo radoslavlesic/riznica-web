@@ -1,0 +1,6 @@
+// When 'splitter' component should be visible, use this in splitter component's cls attribute.
+.extpl-visible-splitter {
+  background-color: $base-color;
+  border-top: 1px solid $base-color;
+  border-bottom: 1px solid $base-color;
+}

@@ -1,0 +1,6 @@
+.extpl-plain-grid {
+  .x-grid-cell-last {
+    // In plain grid, last cell on the right doesn't have right border.
+    border-right-width: 0;
+  }
+}
