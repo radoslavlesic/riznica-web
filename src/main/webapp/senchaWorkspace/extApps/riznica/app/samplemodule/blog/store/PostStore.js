@@ -5,13 +5,13 @@ Ext.define("riznica.samplemodule.blog.store.PostStore", {
     model: 'riznica.samplemodule.blog.model.Post',
     storeId: 'post',
     fields: ["id", "title", "content"],
-    autoLoad: true,
+    autoLoad: false,
     autoSync: true,
-    // remoteFilter: false,
+    remoteFilter: false,
     proxy: {
         type: "ajax",
         api: {
-            read: riznica.configuration.contextPath + "/api/post/list",
+            read: riznica.configuration.contextPath + "/api/post/listByTitle",
             write: riznica.configuration.contextPath + "/api/post/create"
         },
         reader: {

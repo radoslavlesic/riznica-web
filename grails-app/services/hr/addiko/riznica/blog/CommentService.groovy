@@ -42,7 +42,7 @@ class CommentService {
 
         Comment comment = new Comment(
                 content: cmd.content,
-                user: User.findById(u.id),
+                user: u,
                 post: Post.findById(cmd.post.id)
         )
         comment.save()

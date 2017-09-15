@@ -24,7 +24,7 @@ Ext.define("riznica.samplemodule.view.CategoryFormView", {
         }]
     }],
     buttons: [{
-        text: 'Update',
+        text: 'Save',
         iconCls: 'x-fa fa-floppy-o',//declared CSS Background somewhere
         listeners: {
             click: function (thisEl) {

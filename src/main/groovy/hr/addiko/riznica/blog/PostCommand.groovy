@@ -10,7 +10,11 @@ class PostCommand implements Validateable{
     User user
     String title
     String content
+    String authorName
 //    String timestamp
+
+    Date dateFrom
+    Date dateTo
 
 
     static constraints = {
@@ -19,6 +23,8 @@ class PostCommand implements Validateable{
         user nullable: true
         title nullable: true
         content nullable: true
-
+        authorName nullable: true
+        dateFrom nullable: true
+        dateTo nullable: true
     }
 }
