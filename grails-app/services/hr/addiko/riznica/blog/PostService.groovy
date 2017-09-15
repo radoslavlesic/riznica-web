@@ -27,7 +27,23 @@ class PostService {
     }
 
     def listByTitle(PostCommand cmd){
-        def result = Post.findAllByTitleLike("%"+'post'+"%")
+        def result = Post.findAllByTitleIlike("%"+cmd.title+"%")
+
+        [success: true, data: result]
+    }
+
+    def listByAuthor(PostCommand cmd){
+        def result = Post.findAllByAuthorNameIlike("%"+cmd.authorName+"%")
+
+        [success: true, data: result]
+    }
+
+    def listByDate(PostCommand cmd){
+        def criteria = Post.createCriteria()
+        def result = criteria.list(){
+            gt('dateCreated', cmd.dateFrom)
+            lt('dateCreated', (cmd.dateTo+1))
+        }
 
         [success: true, data: result]
     }
