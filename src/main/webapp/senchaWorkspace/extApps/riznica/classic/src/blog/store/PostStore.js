@@ -1,17 +1,18 @@
-Ext.define("riznica.samplemodule.blog.store.CommentStore", {
+Ext.define("riznica.blog.store.PostStore", {
     extend: "Ext.data.Store",
 
-    alias: "store.CommentStore",
-    model: 'riznica.samplemodule.blog.model.Comment',
-
-    // fields: ["user","content"],
-    autoLoad: true,
+    alias: "store.samplemodule-blog-store-PostStore",
+    model: 'riznica.blog.post.model.PostViewModel',
+    storeId: 'post',
+    fields: ["id", "title", "content"],
+    autoLoad: false,
     autoSync: true,
-
+    remoteFilter: false,
     proxy: {
         type: "ajax",
         api: {
-            read: riznica.configuration.contextPath + "/api/comment/listByPostId",
+            read: riznica.configuration.contextPath + "/api/post/listByTitle",
+            write: riznica.configuration.contextPath + "/api/post/create"
         },
         reader: {
             type: "json",

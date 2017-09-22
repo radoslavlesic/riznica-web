@@ -1,6 +1,6 @@
-Ext.define("riznica.samplemodule.view.SinglePost",{
+Ext.define("riznica.blog.post.view.PostViewSingle",{
     extend: 'Ext.panel.Panel',
-    alias : 'widget.SinglePost',
+    alias : 'widget.PostViewSingle',
 
     items:[{
         xtype: 'panel',

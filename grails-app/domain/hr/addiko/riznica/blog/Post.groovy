@@ -11,7 +11,7 @@ class Post {
 
     Category category
     User user
-    String authorName
+  String authorName
 
     static belongsTo = [category: Category, user: User]
     static hasMany = [comments: Comment]

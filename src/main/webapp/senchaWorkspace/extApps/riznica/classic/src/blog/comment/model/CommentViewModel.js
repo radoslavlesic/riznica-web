@@ -1,4 +1,4 @@
-Ext.define("riznica.samplemodule.blog.model.Comment", {
+Ext.define("riznica.blog.comment.model.CommentViewModel", {
     extend:'Ext.data.Model',
 
     fields:[

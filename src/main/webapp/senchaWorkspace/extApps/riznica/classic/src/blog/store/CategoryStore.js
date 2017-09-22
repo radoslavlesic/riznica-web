@@ -1,18 +1,21 @@
-Ext.define("riznica.samplemodule.blog.store.PostStore", {
+Ext.define("riznica.blog.store.CategoryStore", {
     extend: "Ext.data.Store",
 
-    alias: "store.samplemodule-blog-store-PostStore",
-    model: 'riznica.samplemodule.blog.model.Post',
-    storeId: 'post',
-    fields: ["id", "title", "content"],
-    autoLoad: false,
+    alias: "store.blog-store-CategoryStore",
+    model: 'riznica.blog.category.model.CategoryViewModel',
+
+    // pageSize: 2,
+
+    fields: ["id", "name"],
+    autoLoad: true,
     autoSync: true,
     remoteFilter: false,
+    remoteSort: false,
     proxy: {
         type: "ajax",
         api: {
-            read: riznica.configuration.contextPath + "/api/post/listByTitle",
-            write: riznica.configuration.contextPath + "/api/post/create"
+            read: riznica.configuration.contextPath + "/api/category/list",
+            write: riznica.configuration.contextPath + "/api/category/create"
         },
         reader: {
             type: "json",
@@ -25,7 +28,7 @@ Ext.define("riznica.samplemodule.blog.store.PostStore", {
             writeAllFields: false,
             rootProperty: 'data'
         },
-        actionMethods: { create: "POST", read: "GET", update: "POST", destroy: "POST" },
+        actionMethods: { create: "POST", read: "POST", update: "POST", destroy: "POST" },
         paramsAsJson: true,
         simpleSortMode: true,
         sortParam: "sortBy",

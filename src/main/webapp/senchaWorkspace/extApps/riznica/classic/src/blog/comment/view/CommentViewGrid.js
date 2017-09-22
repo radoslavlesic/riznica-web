@@ -1,9 +1,9 @@
-Ext.define("riznica.samplemodule.view.PostCommentGrid",{
+Ext.define("riznica.blog.comment.view.CommentViewGrid",{
     extend: 'Ext.grid.Panel',
     requires:[
-        'riznica.samplemodule.blog.store.CommentStore'
+        'riznica.blog.store.CommentStore'
     ],
-    alias: 'widget.PostCommentGrid',
+    alias: 'widget.CommentViewGrid',
     itemId: 'PostCommentGrid',
     // title: 'Comment List',
     store: {
