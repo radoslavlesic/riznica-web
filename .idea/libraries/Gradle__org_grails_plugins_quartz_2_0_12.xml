@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.grails.plugins:quartz:2.0.12">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails.plugins/quartz/2.0.12/4c676c484a5d89715b4cee977475178aeff3e23e/quartz-2.0.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.grails.plugins/quartz/2.0.12/d4c36d2d7e54bf31b5a72f46ddcadce97fba1f85/quartz-2.0.12-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
