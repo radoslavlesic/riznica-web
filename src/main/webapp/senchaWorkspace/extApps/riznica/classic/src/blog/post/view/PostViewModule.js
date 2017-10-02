@@ -17,32 +17,20 @@ Ext.define("riznica.blog.post.view.PostViewModule", {
   controller: "PostViewController",
   items: [
     {
-      xtype: 'panel',
-      title: 'Posts',
-      itemId: "dynamicPost",
-      height: 750,
-      autoScroll: true,
+      xtype: 'panel',title: 'Posts',itemId: "dynamicPost",height: 750,autoScroll: true,
       // style: {'border':'1px solid #5FA2DD'},
-      layout: {
-        type: 'vbox',
-        pack: 'start',
-        align: 'stretch'
+      layout: {type: 'vbox',pack: 'start',align: 'stretch'
       },
       tools: [
         {
-          type: 'refresh',
-          text: 'Refresh',
-          tooltip: 'Refresh',
-
+          type: 'refresh',text: 'Refresh',tooltip: 'Refresh',
           listeners: {
             click: function(thisEl) {
               thisEl.up("#postModule").getController().onClickRefresh(thisEl);
             }
           }
         }, {
-          type: 'plus',
-          text: 'Add',
-          tooltip: 'Add new post',
+          type: 'plus',text: 'Add',tooltip: 'Add new post',
           listeners: {
             click: function(thisEl) {
               thisEl.up("#postModule").getController().onClickAddNewPost();

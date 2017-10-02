@@ -1,8 +1,7 @@
 Ext.define("riznica.blog.store.PostStore", {
     extend: "Ext.data.Store",
-
     alias: "store.samplemodule-blog-store-PostStore",
-    model: 'riznica.blog.post.model.PostViewModel',
+    model: 'riznica.blog.post.model.PostModel',
     storeId: 'post',
     fields: ["id", "title", "content"],
     autoLoad: false,

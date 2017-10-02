@@ -8,8 +8,10 @@ Ext.define("riznica.blog.post.view.PostViewForm", {
   alias: 'widget.PostViewForm',
   itemId: 'postWindowId',
   modal: true,
+  viewModel:{
+    type: 'PostViewFullModel'
+  },
   flex: 1,
-  autoShow: true,
   title: 'Add new post',
   controller: "PostViewController",
   items: [{
@@ -23,22 +25,26 @@ Ext.define("riznica.blog.post.view.PostViewForm", {
         name: 'id',
         itemId: 'postId',
         fieldLabel: 'ID',
+        bind: {value: '{post.id}'},
         readOnly: true
       },
       {
         name: 'title',
         itemId: 'postTitle',
-        fieldLabel: 'Title'
+        fieldLabel: 'Title',
+        bind: {value: '{post.title}'}
       }, {
         name: 'content',
         xtype: 'textarea',
         itemId: 'postContent',
-        fieldLabel: 'Content'
+        fieldLabel: 'Content',
+        bind: {value: '{post.content}'}
       }, {
         name: 'category',
         xtype: 'combobox',
         itemId: 'postCategory',
         fieldLabel: 'Category',
+        bind: {value: '{post.categoryId}'},
         tpl: Ext.create('Ext.XTemplate',
           '<ul class="x-list-plain"><tpl for=".">',
           '<li role="option" class="x-boundlist-item">{id} - {name}</li>',
@@ -109,31 +115,21 @@ Ext.define("riznica.blog.post.view.PostViewForm", {
                       Ext.each(responseTextDecoded.data || [], function(item) {
                         Ext.ComponentQuery.query('#dynamicPost')[0].add(
                           {
-                            xtype: 'PostViewSingle',
-                            title: item.title,
-                            itemId: 'post' + item.id,
-                            margin: '5 5 5 5',
-                            style: { 'border': '1px solid #5FA2DD' },
+                            xtype: 'PostViewSingle',title: item.title,
+                            itemId: 'post' + item.id,margin: '5 5 5 5',
+                            style: {'border': '1px solid #5FA2DD'},
                             listeners: {
                               render: function(panel) {
                                 Ext.ComponentQuery.query('#postModule')[0].getController().onClickOpenPostFullView(panel, item);
                               }
                             },
-                            tools: [{
-                              xtype: 'button',
-                              text: 'Delete',
-                              border: false,
-                              iconCls: 'x-fa fa-trash',
-                              tooltip: 'Delete',
+                            tools: [
+                              {xtype: 'button',text: 'Delete',border: false,iconCls: 'x-fa fa-trash',tooltip: 'Delete',
                               handler: function() {
                                 Ext.ComponentQuery.query('#postModule')[0].getController().onClickDeletePost2(item);
                               }
-                            }, {
-                              xtype: 'button',
-                              text: 'Edit',
-                              tooltip: 'Edit Post',
-                              border: false,
-                              iconCls: 'x-fa fa-pencil',
+                            },
+                              {xtype: 'button',text: 'Edit',tooltip: 'Edit Post',border: false,iconCls: 'x-fa fa-pencil',
                               handler: function() {
                                 Ext.ComponentQuery.query('#postModule')[0].getController().onClickEditPost(item);
                                 // var config = {
