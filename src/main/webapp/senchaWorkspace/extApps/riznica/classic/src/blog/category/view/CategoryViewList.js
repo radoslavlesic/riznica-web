@@ -6,6 +6,7 @@ Ext.define("riznica.blog.category.view.CategoryViewList", {
   requires: [
     "riznica.blog.store.CategoryStore",
     "riznica.blog.category.view.CategoryViewForm",
+    "riznica.blog.category.view.CategoryViewFormModel",
     "riznica.blog.category.controller.CategoryViewController"
   ],
   controller: "CategoryViewController",
@@ -26,8 +27,8 @@ Ext.define("riznica.blog.category.view.CategoryViewList", {
     { text: "Name", dataIndex: "name", flex: 1 }
   ],
   listeners: {
-    select: function(grid, record) {
-      Ext.ComponentQuery.query('#gridCategory')[0].getController().onCategorySelect(grid, record);
+    cellclick: function(view, cellEl, colIdx, record, rowEl, rowIdx, event) {
+      Ext.ComponentQuery.query('#gridCategory')[0].getController().onCategorySelect(view, record);
     },
     itemcontextmenu: function(tree, record, item, index, e, eOpts) {
       Ext.ComponentQuery.query('#gridCategory')[0].getController().onRightClick(tree, record, item, index, e, eOpts);

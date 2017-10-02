@@ -1,6 +1,6 @@
 Ext.define("riznica.blog.category.view.CategoryViewForm", {
-  requires: "riznica.blog.category.model.CategoryViewModel",
   extend: 'Ext.window.Window',
+  requires: "riznica.blog.category.model.CategoryViewModel",
   alias: 'widget.CategoryViewForm',
   itemId: 'catWindowId',
   title: 'Add new record',
