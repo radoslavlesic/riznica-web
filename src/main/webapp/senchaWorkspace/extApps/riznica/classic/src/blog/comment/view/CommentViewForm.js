@@ -1,15 +1,19 @@
 Ext.define("riznica.blog.comment.view.CommentViewForm", {
   extend: 'Ext.window.Window',
   alias: 'widget.CommentViewForm',
-  autoShow: true,
+  // autoShow: true,
   margin: '5 5 5 5',
   itemId: 'commentWindow',
   modal: true,
+  viewModel:{
+    type: 'CommentViewModel'
+  },
   items: [
     {
       xtype: 'textarea',
       fieldLabel: 'Comment',
       name: 'comment',
+      bind:{value:'{comment.content}'},
       itemId: 'commentArea',
       margin: '5 5 5 5',
       width: 350,
