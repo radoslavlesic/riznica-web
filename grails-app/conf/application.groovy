@@ -145,6 +145,9 @@ String h2FileDbSuffix = "MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE;AUT
 environments {
   development {
     riznica.bootstrap.createAllBootStrapData = true
+
+    grails.plugin.databasemigration.dropOnStart = false
+    grails.plugin.databasemigration.updateOnStart = true
     dataSource {
       dbCreate = "create-drop"
       url = "${h2FileDbPrefix}/devDb;${h2FileDbSuffix}"
@@ -152,6 +155,9 @@ environments {
   }
   test {
     riznica.bootstrap.createAllBootStrapData = true
+
+    grails.plugin.databasemigration.dropOnStart = false
+    grails.plugin.databasemigration.updateOnStart = true
     dataSource {
       dbCreate = "create-drop"
       url = "${h2FileDbPrefix}/devDb;${h2FileDbSuffix}"
@@ -191,3 +197,5 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 	[pattern: '/**',             filters: 'JOINED_FILTERS']
 ]
 
+grails.plugin.databasemigration.changelogFileName = 'changelog.xml'
+grails.plugin.databasemigration.updateOnStartFileName = 'changelog.xml'
