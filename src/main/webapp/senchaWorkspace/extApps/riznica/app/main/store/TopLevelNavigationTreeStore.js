@@ -2,6 +2,8 @@ Ext.define('riznica.main.store.TopLevelNavigationTreeStore', {
   extend: 'Ext.data.TreeStore',
   storeId: 'main.store.TopLevelNavigationTreeStore',
   require: [
+
+    "riznica.order.OrderViewMain",
     "riznica.blog.BlogViewMain"
   ],
 
@@ -31,10 +33,10 @@ Ext.define('riznica.main.store.TopLevelNavigationTreeStore', {
           text: 'Blog', topLevelRouteId: 'blog', iconCls: 'x-fa fa-search', leaf: true,
           viewConfig: { xtype: 'BlogViewMain' }
         }
-        // ,{
-        //     text: 'Post', topLevelRouteId: 'post', iconCls: 'x-fa fa-search', leaf: true,
-        //     viewConfig: {xtype: 'samplemodule-view-PostModuleView', margin: '5 5 5 5'}
-        // }
+        ,{
+            text: 'Order', topLevelRouteId: 'order', iconCls: 'x-fa fa-search', leaf: true,
+            viewConfig: {xtype: 'OrderViewMain', margin: '5 5 5 5'}
+        }
       ]
     };
 

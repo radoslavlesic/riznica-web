@@ -2,9 +2,8 @@ Ext.define("riznica.blog.store.CommentStore", {
   extend: "Ext.data.Store",
 
   alias: "store.CommentStore",
-  model: 'riznica.blog.comment.model.CommentViewModel',
+  model: 'riznica.blog.comment.model.CommentModel',
 
-  // fields: ["user","content"],
   autoLoad: true,
   autoSync: true,
 

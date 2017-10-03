@@ -168,18 +168,38 @@ Ext.define("riznica.blog.controller.BlogMainViewController", {
     }
   },
   onComboSearch: function(combo, records, eOpts) {
-    Ext.ComponentQuery.query('#dynamicPost')[0].removeAll(true);
-    Ext.ComponentQuery.query('#dynamicPost')[0].add(
-      {
-        xtype: 'PostViewFull',
-        title: 'Post View'
-      });
 
-    Ext.ComponentQuery.query('#postIdFull')[0].setValue(records.data.id);
+    var postViewDetails = Ext.create('riznica.blog.post.view.PostViewFull');
+    postViewDetails.getViewModel().data.post = records.data;
+    postViewDetails.title = records.data.title;
+    postViewDetails.margin = '5 5 5 5';
+    postViewDetails.tools = [{
+      xtype: 'button',text: 'Edit', id: 'editPost',border: false,tooltip: 'Edit Post',iconCls: 'x-fa fa-pencil',
+        handler: function() {
+          Ext.ComponentQuery.query('#postModule')[0].getController().onClickEditPost(records.data);
+        }
+      },{
+      xtype: 'button',text: 'Delete',border: false,iconCls: 'x-fa fa-trash',tooltip: 'Delete',
+        handler: function() {
+          Ext.ComponentQuery.query('#postModule')[0].getController().onClickDeletePost(records.data);
+        }
+      }
+    ]
+
+    Ext.ComponentQuery.query("#dynamicPost")[0].removeAll(true);
+
+
+    Ext.ComponentQuery.query("#dynamicPost")[0].add(
+      {xtype: postViewDetails});
+    // Ext.ComponentQuery.query("#dynamicPost")[0].addTool(
+    //   {xtype: 'button',text: 'Edit',id: 'editPost',border: false,tooltip: 'Edit Post',iconCls: 'x-fa fa-pencil',
+    //     handler: function() {
+    //       Ext.ComponentQuery.query('#postModule')[0].getController().onClickEditPost(records.data);
+    //     }
+    //   }
+    // );
+
     Ext.ComponentQuery.query('#postIdFull')[0].hide();
-    Ext.ComponentQuery.query('#postTitle')[0].setValue(records.data.title);
-    Ext.ComponentQuery.query('#postContent')[0].setValue(records.data.content);
-    Ext.ComponentQuery.query('#postAuthor')[0].setValue(records.data.authorName);
 
     Ext.ComponentQuery.query('#gridCategory')[0].getStore().each(function(rec) {
       if (records.data.categoryId == rec.get('id')) {
