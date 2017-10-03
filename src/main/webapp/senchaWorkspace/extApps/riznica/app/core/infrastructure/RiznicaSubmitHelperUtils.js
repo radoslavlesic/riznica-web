@@ -1,4 +1,4 @@
-Ext.define("rbvt.core.infrastructure.RbVtSubmitHelperUtils", {
+Ext.define("riznica.core.infrastructure.RbVtSubmitHelperUtils", {
   requires: ["grich.core.util.AjaxSubmitHelper"],
 
   statics: {
