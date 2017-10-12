@@ -1,5 +1,5 @@
 Ext.define('riznica.order.product.view.ProductViewItem', {
-  extend: "Ext.panel.Panel",
+  extend: "grich.core.component.form.AdvancedFormPanel",
   alias: 'widget.ProductViewItem',
 
   frame: true,
@@ -31,19 +31,21 @@ Ext.define('riznica.order.product.view.ProductViewItem', {
           margin: '0 5 0 5',
           bind: { value: "{product.description}" }
         },
-        { xtype: 'panel', margin: 5, width: 235, height: 150, itemId: 'productImage', frame: true},
+        { xtype: 'panel', itemId: 'productImage', margin: 5, width: 235, height: 150,  frame: true},
         {
           xtype: 'numberfield', fieldLabel: 'Price', labelStyle: 'width:40px', readOnly: true,
           text: 'Price:', itemId: 'productPrice', hideTrigger: true, keyNavEnabled: false, mouseWheelEnabled: false,
           bind: { value: "{product.price}" },
-          // style: 'display:inline-block;text-align:right',
           margin: '5 5 0 5'
         },
         {
-          xtype: 'panel', layout: { type: 'hbox', pack: 'end', align: 'stretch' },
+          xtype: 'panel', itemId:'itemBtnPanel', layout: { type: 'hbox', pack: 'end', align: 'stretch' },
           items: [
-            { xtype: 'button', title: 'Details', text: "Details", margin: 5 },
-            { xtype: 'button', title: 'Add to cart', text: 'Add to cart', margin: '5 5 5 0' }
+            {xtype: 'numberfield', itemId: 'qty', width: 145,fieldLabel: 'Qty', labelStyle: 'width: 25px',
+              margin: '5 5 5 0',hideTrigger: true,keyNavEnabled: false,mouseWheelEnabled: false
+            },
+            // {xtype: 'button', itemId: 'detailsBtn', title: 'Details', text: "Details", margin: 5 },
+            {xtype: 'button', itemId: 'addToCart', title: 'Add to cart', text: 'Add to cart', margin: '5 5 5 0'}
           ]
         }
        ]

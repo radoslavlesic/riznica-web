@@ -76,11 +76,12 @@ class BootStrap {
   private createOrder(){
     new OrderCategory(name: 'Pizza').save(flush: true)
 
-//    Product pro
-//
-//    15.times {
-//      pro = new Product(title: "product "+it++, description: "neki opis", price: it+0.12, image: null).save(flush: true)
-//    }
+    Product pro
+
+    15.times {
+      pro = new Product(title: "product "+it++, description: "neki opis", price: it+0.12,
+        image: null, thumbnail: null).save(flush: true)
+    }
 
   }
 
