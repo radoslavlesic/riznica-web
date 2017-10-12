@@ -23,9 +23,7 @@ Ext.define('riznica.order.product.view.ProductViewItemForm', {
   config:{
     myStore: Ext.create('riznica.order.stores.DocumentStore')
   },
-  // width: 450,
-  // height: 450,
-  // padding: 5,
+
   initComponent: function() {
 
     var me = this;
@@ -34,29 +32,26 @@ Ext.define('riznica.order.product.view.ProductViewItemForm', {
       items: [
         {xtype: 'form',defaultType: 'textfield', itemId: 'productItemForm',
           items:[
-            {name: 'id', fieldLabel: 'ID', itemId: 'productId', margin: 5 ,readOnly: true, bind:{ value: "{product.id}"}},
+            {name: 'id', fieldLabel: 'ID', itemId: 'productId', margin: 5 ,readOnly: true,
+              bind:{ value: "{product.id}"}, hidden: true},
             {name: 'title', fieldLabel: 'Title', itemId: 'productTitle', margin: 5,bind:{ value: "{product.title}"}},
             {xtype: 'textarea',name: 'description', fieldLabel: 'Description', itemId: 'productDescription', margin: 5,
               bind:{ value: "{product.description}"}
             },
-            {name: 'price', fieldLabel:'Price', itemId: 'productPrice', margin: 5, bind:{ value: "{product.price}"}},
+            {xtype: 'numberfield', name: 'price', fieldLabel:'Price', itemId: 'productPrice',
+              margin: 5, bind:{ value: "{product.price}"},hideTrigger: true,keyNavEnabled: false,
+              mouseWheelEnabled: false
+            },
             {xtype: 'filefield',name: 'photo',margin: 5,fieldLabel: 'Photo',//labelWidth: 100,
               msgTarget: 'side',allowBlank: false,anchor: '100%',buttonText: 'Select Photo...',
               buttonOnly: true,
+
               listeners: {
                 change: function() {
-                  // var title = this.up('form').down('#productTitle').getValue();
-                  // var title = this.up().up().getStore();
-                  // var path = this.getValue();
-                  // var name = this.getValue().replace(/^.*[\\\/]/, '');
                   var file = this.getEl().down('input[type=file]').dom.files[0];
 
                   var fileReader = new FileReader();
                   fileReader.addEventListener("load",function() {
-
-                    // var record = Ext.create("riznica.order.document.model.DocumentModel",
-                    //   {image: fileReader.result});
-                    console.log(fileReader.result);
 
                     riznica.util.ProductUtil.image = fileReader.result;
                   }, false);
@@ -67,7 +62,7 @@ Ext.define('riznica.order.product.view.ProductViewItemForm', {
                 },
                 afterrender: function(cmp) {
                   cmp.fileInputEl.set({
-                    accept: 'image/*,application/pdf'
+                    accept: 'image/*,application/jpeg'
                   });
                 }
               }

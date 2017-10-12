@@ -5,7 +5,8 @@ Ext.define("riznica.order.product.view.ProductViewMain", {
   requires: [
     "riznica.order.product.view.ProductViewItem",
     "Ext.layout.container.Table",
-    "riznica.order.product.controller.ProductViewController"
+    "riznica.order.product.controller.ProductViewController",
+    "Ext.Img"
   ],
   controller: 'ProductViewController',
   layout: {
@@ -33,6 +34,7 @@ Ext.define("riznica.order.product.view.ProductViewMain", {
           var item = Ext.create('riznica.order.product.view.ProductViewItemForm');
           item.title = "Add new product";
           item.show();
+
         }
       }
     },{
@@ -40,15 +42,7 @@ Ext.define("riznica.order.product.view.ProductViewMain", {
       listeners:{
         click: function() {
           Ext.ComponentQuery.query('#productViewMain')[0].removeAll(true);
-          Ext.ComponentQuery.query('#productViewMain')[0].getController().refresh();
-        }
-      }
-    },{
-      xtype: 'button', text: 'slika', iconCls: 'x-fa fa-add',
-      listeners:{
-        click: function() {
-          Ext.ComponentQuery.query('#productViewMain')[0].removeAll(true);
-          Ext.ComponentQuery.query('#productViewMain')[0].getController().refresh();
+          Ext.ComponentQuery.query('#productViewMain')[0].getController().reloadData();
         }
       }
     }
