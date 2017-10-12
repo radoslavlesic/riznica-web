@@ -86,7 +86,7 @@ class ProductService {
     String imageString = "data:image/jpeg;base64,"+encoder.encode(imageBytes)
 
     Product product = new Product(title: cmd.title, description: cmd.description,
-        price: cmd.price, image: cmd.image, thumbnail: imageString)
+        price: cmd.price, qty: cmd.qty, image: cmd.image, thumbnail: imageString)
     product.save()
 
     [success: true]

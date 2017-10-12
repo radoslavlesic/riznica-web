@@ -13,6 +13,7 @@ class ProductCommand extends AdvancedSearchCommand implements Validateable{
   String title
   String description
   Double price
+  Float qty
   String image
   String thumbnail
 
@@ -35,6 +36,7 @@ class ProductCommand extends AdvancedSearchCommand implements Validateable{
     title nullable:true
     description nullable: true
     price nullable: true
+    qty nullable: true
     image nullable: true
     thumbnail nullable: true
   }

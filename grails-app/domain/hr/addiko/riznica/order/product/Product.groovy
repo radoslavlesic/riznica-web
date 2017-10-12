@@ -9,6 +9,7 @@ class Product {
   String title
   String description
   Float price
+  Float qty
   String image
   String thumbnail
 
@@ -16,6 +17,7 @@ class Product {
     title nullable: true//, blank: false
     description nullable: true//, blank: false
     price nullable: true//, blank: false
+    qty nullable: true//, blank: false
     image (blank: true, nullable:true, maxSize:1073741824)
     thumbnail (blank: true, nullable:true, maxSize:1073741824)
   }
