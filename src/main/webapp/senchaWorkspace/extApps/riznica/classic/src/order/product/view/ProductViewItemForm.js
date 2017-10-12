@@ -42,6 +42,12 @@ Ext.define('riznica.order.product.view.ProductViewItemForm', {
               margin: 5, bind:{ value: "{product.price}"},hideTrigger: true,keyNavEnabled: false,
               mouseWheelEnabled: false
             },
+            {xtype: 'numberfield', itemId: 'qty',
+              // width: 145,
+              fieldLabel: 'Qty',
+              // labelStyle: 'width: 25px',
+              margin: '5 5 5 5',hideTrigger: true,keyNavEnabled: false,mouseWheelEnabled: false
+            },
             {xtype: 'filefield',name: 'photo',margin: 5,fieldLabel: 'Photo',//labelWidth: 100,
               msgTarget: 'side',allowBlank: false,anchor: '100%',buttonText: 'Select Photo...',
               buttonOnly: true,

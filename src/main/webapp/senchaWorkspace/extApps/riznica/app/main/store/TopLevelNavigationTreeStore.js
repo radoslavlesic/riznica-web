@@ -33,14 +33,14 @@ Ext.define('riznica.main.store.TopLevelNavigationTreeStore', {
           text: 'Blog', topLevelRouteId: 'blog', iconCls: 'x-fa fa-search', leaf: true,
           viewConfig: { xtype: 'BlogViewMain' }
         }
-        ,{
-            text: 'Order', topLevelRouteId: 'order', iconCls: 'x-fa fa-search', leaf: true,
-            viewConfig: {xtype: 'OrderViewMain', margin: '5 5 5 5'}
+        , {
+          text: 'Order', topLevelRouteId: 'order', iconCls: 'x-fa fa-search', leaf: true,
+          viewConfig: { xtype: 'OrderViewMain', margin: '5 5 5 5' }
         }
         ,
         {
           text: 'Order Search', topLevelRouteId: 'orderSearch', iconCls: 'x-fa fa-search', leaf: true,
-          viewConfig: {xtype: 'order-OrderSearchView', margin: '5 5 5 5'}
+          viewConfig: { xtype: 'order-OrderSearchView', margin: '5 5 5 5' }
         }
       ]
     };
