@@ -1,6 +1,6 @@
 Ext.define("riznica.search.order.OrderSearchFormView",{
   extend: "grich.core.component.form.AdvancedFormPanel",
-  xtype: "order-OrderSearchFormVie",
+  xtype: "order-OrderSearchFormView",
   requires:[
     "Ext.button.Button",
     "Ext.container.Container",
@@ -22,9 +22,9 @@ Ext.define("riznica.search.order.OrderSearchFormView",{
     "riznica.order.stores.ProductStore"
   ],
   
-  controller: "order-OrderSearchFormViewController",
-  viewModel: "order-OrderSearchFormViewModel",
-  
+  controller: "order-search-OrderSearchFormViewController",
+  viewModel: "order-search-OrderSearchFormViewModel",
+
   formConfig:{
     labelWidthWider: 120,
     labelAlign: "right",
@@ -36,7 +36,7 @@ Ext.define("riznica.search.order.OrderSearchFormView",{
 
   getParentView: function() {
     var me = this;
-    var parentView = me.up("employee-EmployeeSearchView");
+    var parentView = me.up("order-OrderSearchView");
     return parentView ? parentView : null;
   },
   
@@ -45,11 +45,64 @@ Ext.define("riznica.search.order.OrderSearchFormView",{
     var productStore = Ext.create("riznica.order.stores.ProductStore");
 
     var clearTriggerConfig = { type: "clear", hideWhenMouseOut: false, weight: -1 };
-    productStore.on('load', function() {
-      me.down('[name=fullName]').setEditable(true).typeAhead = true;
-    });
 
     Ext.apply(me,{
+      items:[
+        {
+          defaults:{
+            layout: {type: "vbox"}, border: false,
+            defaults: {
+              width: "100%", margin: "5 0 5 0", triggers:{clear: clearTriggerConfig},
+              labelWidth: me.formConfig.labelWidthWider, labelAlign: me.formConfig.labelAlign
+            }
+          },
+          items:[
+            {
+              columnWidth: .0499,
+              items: [
+                { xtype: "textfield", name: "id", fieldLabel: "Product ID", flex: 1, margin: "8 50 5 0", maxLength: 4, enforceMaxLength: true },
+                {
+                  xtype: "combo", name: "title", fieldLabel: "Product name", editable: false, margin: "8 50 5 0",
+                  displayField: "title", valueField: "title",
+                  store: productStore, itemId: "product",
+                  queryMode: "local", typeAhead: false, minChars: 2,
+
+                  tpl: Ext.create('Ext.XTemplate',
+                    '<ul class="x-list-plain"><tpl for=".">',
+                    '<li role="option" class="x-boundlist-item">{id} - {title}</li>',
+                    '</tpl></ul>'
+                  ),
+                  // template for the content inside text field
+                  displayTpl: Ext.create('Ext.XTemplate',
+                    '<tpl for=".">',
+                    '{id} - {title}',
+                    '</tpl>'
+                  ),
+
+                  listeners: {
+                    change: function(thisEl, newValue, oldValue) {
+                      var filters = thisEl.store.getFilters();
+                      if (thisEl.value) {
+                        thisEl.mm = filters.add({
+                          id: "id",
+                          property: "title",
+                          value: thisEl.value,
+                          anyMatch: true,
+                          caseSensitive: false
+                        });
+                      }
+                      else if(thisEl.mm) {
+                        filters.remove(thisEl.mm);
+                        thisEl.mm = null;
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
 
     });
 

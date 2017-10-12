@@ -1,7 +1,6 @@
 <component name="libraryTable">
   <library name="Gradle: com.itextpdf:itext-pdfa:5.5.0">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/itextpdf/itext-pdfa/5.5.0/itext-pdfa-5.5.0.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.itextpdf/itext-pdfa/5.5.0/383f684d97a059af7a1ea9edde332cbc6df0d3ed/itext-pdfa-5.5.0.jar!/" />
     </CLASSES>
     <JAVADOC />

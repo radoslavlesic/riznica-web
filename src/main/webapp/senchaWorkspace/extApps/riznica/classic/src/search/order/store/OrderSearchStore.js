@@ -11,7 +11,7 @@ Ext.define("riznica.search.order.store.OrderSearchStore",{
   proxy: {
     type: "ajax",
     api: {
-      read: rbvt.configuration.contextPath + "/api/order/searchAllOrders"
+      read: riznica.configuration.contextPath + "/api/product/searchAllProducts"
     },
     extraParams: {},
     reader: {
@@ -19,7 +19,7 @@ Ext.define("riznica.search.order.store.OrderSearchStore",{
       rootProperty: "data",
       totalProperty: "total"
     },
-    actionMethods: { create: "POST", read: "POST", update: "POST", destroy: "POST" },
+    actionMethods: { create: "POST", read: "GET", update: "POST", destroy: "POST" },
     paramsAsJson: true,
     simpleSortMode: true,
     sortParam: "sortBy",
