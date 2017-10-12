@@ -14,6 +14,17 @@ class ProductController {
     validateCallAndRender(cmd, { productService.list() })
   }
 
+  def listAllProducts(){
+    BaseSearchCommand cmd = new BaseSearchCommand()
+    cmd.limit = 0
+    cmd.start = 0
+    validateCallAndRender(cmd, {productService.listAllProducts()})
+  }
+
+  def searchAllProducts(ProductCommand cmd){
+    validateCallAndRender(cmd,{productService.searchAllProducts(cmd)})
+  }
+
   def create(ProductCommand cmd) {
     validateCallAndRender(cmd, { productService.create(cmd) })
   }
