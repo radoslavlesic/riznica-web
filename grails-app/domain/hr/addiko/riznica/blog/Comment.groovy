@@ -4,22 +4,23 @@ import hr.addiko.riznica.User
 
 class Comment {
 
-    Long id
-    String content
-//    Date dateCreated
+  Long id
+  String content
+  Date dateCreated
 
-    User user
-    Post post
+  User user
+  Post post
 
-    static belongsTo = [user: User, post: Post]
+  static belongsTo = [user: User, post: Post]
 
-    static constraints = {
-        id nullable: true
-        content nullable: true
-        user nullable: true
-    }
+  static constraints = {
+    id nullable: true
+    content nullable: true
+    dateCreated nullable: true
+    user nullable: true
+  }
 
-    static mapping = {
-        user lazy: false
-    }
+  static mapping = {
+    user lazy: false
+  }
 }

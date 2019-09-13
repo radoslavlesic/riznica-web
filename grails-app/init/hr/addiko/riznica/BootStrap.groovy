@@ -6,6 +6,8 @@ import grails.plugin.grich.core.web.ConstrainedSessionLocaleResolver
 import hr.addiko.riznica.blog.Category
 import hr.addiko.riznica.blog.Comment
 import hr.addiko.riznica.blog.Post
+import hr.addiko.riznica.order.OrderCategory
+import hr.addiko.riznica.order.product.Product
 import org.apache.commons.lang.LocaleUtils
 import grails.util.Environment
 import org.joda.time.DateTime
@@ -30,6 +32,8 @@ class BootStrap {
     createPerson()
 
     createBlog()
+
+    createOrder()
   }
 
   private createBlog(){
@@ -67,6 +71,18 @@ class BootStrap {
 
   private createPerson(){
     new Person(name: "radoslav", email: "rlesic@croz.net", phone: "555-555-555").save(flush: true)
+  }
+
+  private createOrder(){
+    new OrderCategory(name: 'Pizza').save(flush: true)
+
+//    Product pro
+//
+//    15.times {
+//      pro = new Product(title: "product "+it++, description: "neki opis", price: it+0.12,
+//        image: null, thumbnail: null).save(flush: true)
+//    }
+
   }
 
   private createTestUser() {

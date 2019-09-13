@@ -16,12 +16,18 @@ class PostController {
     }
 
     def listByCatId(PostCommand cmd){
-
         validateCallAndRender(cmd, {postService.listByCatId(cmd)})
     }
 
     def listByTitle(PostCommand cmd){
         validateCallAndRender(cmd, {postService.listByTitle(cmd)})
+    }
+
+    def listByAuthor(PostCommand cmd){
+        validateCallAndRender(cmd,{postService.listByAuthor(cmd)})
+    }
+    def listByDate(PostCommand cmd){
+        validateCallAndRender(cmd,{postService.listByDate(cmd)})
     }
 
     def findPost(PostCommand cmd){

@@ -68,7 +68,7 @@ Ext.define("riznica.user.view.UserModuleView", {
 
             // The following grid shares a store with the modern version's grid as well.
             items: [
-                {xtype: "UserListView"},
+                {xtype: "UserListView"}
             ]
         }
     ]
